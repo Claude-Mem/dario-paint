@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dario Paint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Patrick+Hand&family=Permanent+Marker&family=Press+Start+2P&display=swap"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="book">
+      <header class="cover">
+        <div class="cover-spine"></div>
+        <div class="cover-label">
+          <div class="label-title">Composition Book</div>
+          <label class="label-line">
+            <span class="label-caption">Name</span>
+            <input id="skill-name-input" spellcheck="false" autocomplete="off" />
+          </label>
+          <label class="label-line label-line-tall">
+            <span class="label-caption">Use when</span>
+            <textarea id="skill-description-input" rows="3" spellcheck="false"></textarea>
+          </label>
+          <div id="description-meter" class="label-meter"></div>
+        </div>
+        <div id="front-matter-stickers" class="stickers"></div>
+      </header>
+      <section id="page" class="page">
+        <canvas id="paint-layer" class="paint-layer"></canvas>
+        <div id="page-blocks" class="page-blocks"></div>
+      </section>
+    </main>
+
+    <div id="tool-hint" class="tool-hint"></div>
+    <nav id="stamp-tray" class="stamp-tray" aria-label="Stamps"></nav>
+
+    <div id="shelf" class="shelf" hidden>
+      <div class="shelf-card">
+        <div class="shelf-header">
+          <h2>Pick a skill</h2>
+          <p>Opening one copies it into your notebooks folder. The original is never touched.</p>
+          <input id="shelf-search" placeholder="search names and descriptions" autocomplete="off" />
+        </div>
+        <div id="shelf-list" class="shelf-list"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" hidden></div>
+    <script type="module" src="./app.ts"></script>
+  </body>
+</html>
