@@ -27,7 +27,7 @@ const extraSkillRoots = (process.env.EXTRA_SKILL_FOLDERS ?? "")
   });
 
 const realSkillRoots = [...claudeCodeSkillRoots, ...extraSkillRoots];
-export const notebooksDirectory = path.join(import.meta.dir, ".scratch", "notebooks");
+export const notebooksDirectory = path.join(import.meta.dir, "..", ".scratch", "notebooks");
 
 export type RealSkill = {
   sourcePath: string;

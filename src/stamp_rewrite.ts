@@ -1,6 +1,10 @@
 // The Human and Einstein stamps rewrite painted text with Claude, through the `claude` CLI
 // that's already logged in on this machine (there is no API key here).
 
+import path from "node:path";
+
+const projectDirectory = path.dirname(import.meta.dir);
+
 export type RewritingStampName = "human" | "einstein";
 
 const replyRules = "Reply with only the replacement markdown: no preamble, no explanation, no code fence around it.";
@@ -38,7 +42,7 @@ export async function rewritePaintedPassage(stampName: RewritingStampName, whole
       "--no-session-persistence",
       "--system-prompt", stampBrief,
     ],
-    { cwd: import.meta.dir, stdin: new Blob([prompt]), stdout: "pipe", stderr: "pipe" },
+    { cwd: projectDirectory, stdin: new Blob([prompt]), stdout: "pipe", stderr: "pipe" },
   );
   const [reply, errorOutput, exitCode] = await Promise.all([
     new Response(claudeProcess.stdout).text(),

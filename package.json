@@ -1,13 +1,40 @@
 {
   "name": "dario-paint",
-  "description": "Paint over a Claude skill to change it: a composition-book SKILL.md editor with Mario Paint-style stamps.",
+  "description": "Visual editor for Claude Code skills (SKILL.md): paint over a skill with Mario Paint-style stamps and Claude rewrites it.",
   "license": "MIT",
+  "author": "Alex Newman",
+  "homepage": "https://github.com/Claude-Mem/dario-paint#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Claude-Mem/dario-paint.git"
+  },
+  "bugs": "https://github.com/Claude-Mem/dario-paint/issues",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "claude-skills",
+    "agent-skills",
+    "skill-md",
+    "skill-editor",
+    "skill-creator",
+    "prompt-engineering",
+    "prompt-editor",
+    "markdown-editor",
+    "anthropic",
+    "ai-agents",
+    "llm",
+    "mario-paint",
+    "pixel-art",
+    "bun",
+    "typescript"
+  ],
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun --hot server.ts",
-    "start": "bun server.ts",
-    "test": "bun test"
+    "dev": "bun --hot src/server.ts",
+    "start": "bun src/server.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit -p src"
   },
   "dependencies": {
     "marked": "^18.1.1",
